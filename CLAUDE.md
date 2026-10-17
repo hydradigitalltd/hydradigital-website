@@ -83,4 +83,4 @@ Cloudflare Pages project **`hydradigital`** (`hydradigital.pages.dev`), custom d
 npm run deploy
 ```
 
-Repo: `basiliskenterprisesolutions/hydradigital-website`, commits straight to `main`.
+Repo: `hydradigitalltd/hydradigital-website`, commits straight to `main`.
