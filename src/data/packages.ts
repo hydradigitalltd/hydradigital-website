@@ -19,7 +19,7 @@ export const plans: Plan[] = [
     tagline: 'A proper website, hosted and looked after.',
     price: 49,
     highlights: [
-      'Custom-designed 5 page website',
+      'Custom-designed website',
       'Hosting, SSL and security included',
       'Domain and business email setup',
       'Basic on-page SEO',
@@ -33,7 +33,7 @@ export const plans: Plan[] = [
     price: 149,
     popular: true,
     highlights: [
-      'Up to 12 pages, edit it yourself with the CMS',
+      'Edit it yourself with the CMS',
       'Online booking and card payments',
       'Simple CRM for every lead and customer',
       'Monthly SEO and Google Business Profile management',
@@ -46,7 +46,7 @@ export const plans: Plan[] = [
     tagline: 'Marketing and admin running on autopilot.',
     price: 349,
     highlights: [
-      'Unlimited pages and a full e-commerce option',
+      'Full e-commerce option',
       'Google Ads management (ad spend separate)',
       'Social media management, 12 posts a month',
       'AI phone assistant that answers every call',
@@ -88,7 +88,7 @@ export const featureGroups: FeatureGroup[] = [
       { label: 'Online payments and deposits', values: [false, true, true] },
       { label: 'CRM, leads and customer records', values: [false, true, true] },
       { label: 'Automatic email and SMS reminders', values: [false, false, true] },
-      { label: 'Custom integrations', values: [false, false, '1 a month'] },
+      { label: 'Custom integrations', values: [false, false, 'On request'] },
     ],
   },
   {
@@ -133,17 +133,6 @@ export const solutions: { title: string; body: string }[] = [
   { title: 'Google Business Profile', body: 'Keep your Maps listing accurate, active and collecting reviews.' },
   { title: 'Social media', body: 'Regular, on-brand posts so your pages never go quiet.' },
   { title: 'AI phone assistant', body: 'Every call answered, questions handled, bookings taken, 24/7.' },
-]
-
-export const addOns: { title: string; body: string; price: string }[] = [
-  { title: 'Logo and brand design', body: 'Logo, colours and fonts, with a brand pack you keep.', price: 'from £250' },
-  { title: 'Video editing', body: 'Short promo and social clips cut from your own footage.', price: 'from £60 a clip' },
-  { title: 'Copywriting', body: 'Page and blog copy written in your voice.', price: 'from £40 a page' },
-  { title: 'Professional photography', body: 'Premises, team and product shots for the site and socials.', price: 'from £300' },
-  { title: 'Email marketing', body: 'Newsletters and automated campaigns to past customers.', price: 'from £90 a month' },
-  { title: 'Review and reputation management', body: 'Collect reviews and reply to them for you.', price: 'from £49 a month' },
-  { title: 'Business consulting', body: 'Hands-on advice on pricing, process and going digital.', price: '£75 an hour' },
-  { title: 'Staff training', body: 'Get your team confident with the CMS, CRM and booking tools.', price: '£150 a session' },
 ]
 
 export const steps: { title: string; body: string }[] = [

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { addOns, faqs, featureGroups, plans, solutions, steps } from './data/packages'
+import { faqs, featureGroups, plans, solutions, steps } from './data/packages'
 import type { Cell, PlanId } from './data/packages'
 import './smb.css'
 
@@ -220,26 +220,7 @@ function SmbHome() {
         </div>
       </section>
 
-      <section className="content-section soft-section" id="add-ons">
-        <div className="container">
-          <div className="section-heading">
-            <span className="eyebrow">Add-ons</span>
-            <h2>Extras on any package</h2>
-            <p>Brand, content and advice, bought when you need it.</p>
-          </div>
-          <div className="smb-solutions">
-            {addOns.map((item) => (
-              <article className="smb-solution" key={item.title}>
-                <h3>{item.title}</h3>
-                <p>{item.body}</p>
-                <p className="smb-addon-price">{item.price}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="content-section" id="how">
+      <section className="content-section soft-section" id="how">
         <div className="container">
           <div className="section-heading">
             <span className="eyebrow">How it works</span>
@@ -257,7 +238,7 @@ function SmbHome() {
         </div>
       </section>
 
-      <section className="content-section soft-section" id="faq">
+      <section className="content-section" id="faq">
         <div className="container smb-faq">
           <div className="section-heading">
             <span className="eyebrow">Q&amp;A</span>
