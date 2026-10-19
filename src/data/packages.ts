@@ -66,7 +66,6 @@ export const featureGroups: FeatureGroup[] = [
     heading: 'The basics',
     rows: [
       { label: 'Custom-designed website', values: [true, true, true] },
-      { label: 'Pages included', values: ['5', '12', 'Unlimited'] },
       { label: 'Mobile-ready and fast', values: [true, true, true] },
       { label: 'Hosting, SSL and daily backups', values: [true, true, true] },
       { label: 'Domain and business email setup', values: [true, true, true] },
@@ -101,7 +100,7 @@ export const featureGroups: FeatureGroup[] = [
       { label: 'Google Business Profile management', values: [false, true, true] },
       { label: 'Google Ads management', values: [false, false, true] },
       { label: 'Social media management', values: [false, false, '12 posts a month'] },
-      { label: 'Review requests to happy customers', values: [false, true, true] },
+      { label: 'Review requests', values: [false, true, true] },
     ],
   },
   {
@@ -117,9 +116,6 @@ export const featureGroups: FeatureGroup[] = [
     rows: [
       { label: 'Monthly performance report', values: [false, true, true] },
       { label: 'Analytics dashboard', values: [false, true, true] },
-      { label: 'Changes and support time', values: ['30 min a month', '2 hours a month', '5 hours a month'] },
-      { label: 'Support response time', values: ['2 working days', '1 working day', 'Same day'] },
-      { label: 'Named account manager', values: [false, false, true] },
     ],
   },
 ]
