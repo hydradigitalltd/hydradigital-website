@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import type { FormEvent } from 'react'
-import { faqs, featureGroups, plans, solutions, steps } from './data/packages'
+import { faqs, minutesNote, featureGroups, plans, solutions, steps } from './data/packages'
 import type { Cell, PlanId } from './data/packages'
 import './smb.css'
 
@@ -160,6 +160,7 @@ function SmbHome() {
               </article>
             ))}
           </div>
+          <p className="smb-footnote">{minutesNote}</p>
           <p className="smb-custom">
             Need something bigger, like bespoke software or a mobile app?{' '}
             <a href="/services/bespoke-software">Talk to us about a custom build</a>.
@@ -217,6 +218,7 @@ function SmbHome() {
               </tfoot>
             </table>
           </div>
+          <p className="smb-footnote">{minutesNote}</p>
         </div>
       </section>
 

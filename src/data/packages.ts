@@ -49,7 +49,7 @@ export const plans: Plan[] = [
       'Full e-commerce option',
       'Google Ads management (ad spend separate)',
       'Social media management, 12 posts a month',
-      'AI phone assistant that answers every call',
+      'AI phone assistant, 60 mins included*',
       'Custom integrations with the tools you already use',
     ],
   },
@@ -106,7 +106,7 @@ export const featureGroups: FeatureGroup[] = [
   {
     heading: 'Automation',
     rows: [
-      { label: 'AI phone assistant (inbound calls)', values: [false, false, true] },
+      { label: 'AI phone assistant (inbound calls)', values: [false, false, '60 mins included*'] },
       { label: 'Missed-call text back', values: [false, true, true] },
       { label: 'Call summaries sent to your inbox', values: [false, false, true] },
     ],
@@ -119,6 +119,8 @@ export const featureGroups: FeatureGroup[] = [
     ],
   },
 ]
+
+export const minutesNote = '* Additional AI phone minutes are billed at a custom rate agreed with the client.'
 
 export const solutions: { title: string; body: string }[] = [
   { title: 'Websites', body: 'Fast, mobile-ready sites built to turn visitors into enquiries.' },

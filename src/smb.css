@@ -75,3 +75,4 @@
   .smb-plans, .smb-steps, .smb-contact { grid-template-columns: 1fr; }
   .smb-plan.is-popular { order: -1; }
 }
+.smb-footnote { margin: 1rem 0 0; color: var(--text-muted); font-size: 0.85rem; }
