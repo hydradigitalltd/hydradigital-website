@@ -235,6 +235,34 @@
       }
     }
     </script>
+    <!-- GA4 with Consent Mode v2: everything is denied until the visitor accepts
+         in the cookie banner (src/components/CookieConsent.tsx), which stores
+         the choice under the same localStorage keys read here. -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('consent', 'default', {
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        analytics_storage: 'denied',
+        wait_for_update: 500
+      });
+      try {
+        if (localStorage.getItem('cookies-accepted') === 'true') {
+          gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+            analytics_storage: 'granted'
+          });
+        }
+      } catch (e) {}
+      gtag('js', new Date());
+      gtag('config', 'G-6X6JT1DZQW', { anonymize_ip: true });
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6X6JT1DZQW"></script>
   </head>
   <body>
     <div id="root"></div>
