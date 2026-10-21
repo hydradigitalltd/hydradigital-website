@@ -289,8 +289,8 @@ function SiteChrome({ children }: { children: ReactNode }) {
 
           <nav className="site-nav" aria-label="Primary">
             <a href="/#services">Services</a>
-            <a href="/#packages">Packages</a>
-            <a href="/#faq">Q&amp;A</a>
+            <a href="/#work">Portfolio</a>
+            <a href="/#about">About</a>
             <a href="/#contact">Contact</a>
           </nav>
 

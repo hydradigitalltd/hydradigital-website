@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 import SiteChrome from './components/SiteChrome'
-import SmbHome from './SmbHome'
+import HomePage from './HomePage'
 import ServicePage from './ServicePage'
 
 // The homepage lives in HomePage.tsx; header, footer and the shared canvas
@@ -12,9 +12,9 @@ function App() {
     <SiteChrome>
       <ScrollToTop />
       <Routes>
-        <Route path="/" element={<SmbHome />} />
+        <Route path="/" element={<HomePage />} />
         <Route path="/services/:slug" element={<ServicePage />} />
-        <Route path="*" element={<SmbHome />} />
+        <Route path="*" element={<HomePage />} />
       </Routes>
     </SiteChrome>
   )
