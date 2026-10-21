@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react'
 import type { ReactNode } from 'react'
 import logoAsset from '../../logos/logo-tight.svg'
 import { isWebKitConstrainedEnvironment } from '../lib/env'
-import CookieConsent from './CookieConsent'
 
 // Header, footer and the site-wide canvas/cursor chrome, shared by every route.
 // Extracted from App.tsx unchanged so the homepage renders identically; the
@@ -342,7 +341,6 @@ function SiteChrome({ children }: { children: ReactNode }) {
           </p>
         </div>
       </footer>
-      <CookieConsent />
     </div>
   )
 }

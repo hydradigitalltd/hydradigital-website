@@ -69,7 +69,7 @@ Favicons and `public/og-image.jpg` were generated from `Hydra Digital Logos/Exis
 
 ## Analytics
 
-GA4 `G-6X6JT1DZQW` (Hydra Digital GA account, property 559890118), added 2026-10-21 in `index.html` with Consent Mode v2 defaults denied; the cookie banner is `src/components/CookieConsent.tsx` (localStorage keys `cookies-accepted` / `cookies-rejected`). The old Basilisk GA4 tag and the PostHog key were deliberately not carried over. `src/lib/posthog.ts` is dormant until `VITE_POSTHOG_KEY` is set in `.env.production`.
+None. The Basilisk GA4 tag and PostHog key were deliberately not carried over. `src/lib/posthog.ts` is dormant until `VITE_POSTHOG_KEY` is set in `.env.production`.
 
 ## Credit badge
 
