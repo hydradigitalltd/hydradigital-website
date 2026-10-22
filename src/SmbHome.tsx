@@ -245,9 +245,13 @@ function SmbHome() {
           <div className="portfolio-grid">
             {clients.map((item) => (
               <article className="surface-card portfolio-card" key={item.title}>
-                <div className="portfolio-logo" aria-hidden="true">
-                  <img src={item.logo} alt="" width="256" height="256" loading="lazy" decoding="async" />
-                </div>
+                {item.shot ? (
+                  <img className="smb-shot" src={item.shot} alt={`${item.title} concept website`} width="640" height="400" loading="lazy" decoding="async" />
+                ) : (
+                  <div className="portfolio-logo" aria-hidden="true">
+                    <img src={item.logo} alt="" width="256" height="256" loading="lazy" decoding="async" />
+                  </div>
+                )}
                 <span className="portfolio-badge">{item.badge}</span>
                 <h3>{item.title}</h3>
                 <p className="portfolio-subtitle">{item.subtitle}</p>

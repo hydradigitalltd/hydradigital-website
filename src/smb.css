@@ -76,3 +76,4 @@
   .smb-plan.is-popular { order: -1; }
 }
 .smb-footnote { margin: 1rem 0 0; color: var(--text-muted); font-size: 0.85rem; }
+.smb-shot { display: block; width: 100%; height: auto; aspect-ratio: 8 / 5; object-fit: cover; border-radius: var(--radius-md); border: 1px solid var(--line); margin-bottom: 1rem; }
