@@ -1,5 +1,5 @@
 import areYeDancinLogo from '../../logos/are-ye-dancin-logo.webp'
-import blockchainTokenSniperLogo from '../../logos/blockchain-token-sniper-logo.webp'
+import berthaParkLogo from '../../logos/bertha-park-logo.webp'
 import healthOnWorkLogo from '../../logos/health-on-work-logo.webp'
 
 // Existing clients, carried over from the main homepage portfolio.
@@ -15,14 +15,14 @@ export const clients = [
     linkLabel: 'Visit healthonwork.com',
   },
   {
-    badge: 'Bespoke software',
-    title: 'BlockchainTokenSniper',
-    subtitle: 'Automated cryptocurrency trading and portfolio management',
+    badge: 'Community website',
+    title: 'Bertha Park Residents Group',
+    subtitle: 'Residents group, Perth',
     description:
-      'A cloud-hosted trading platform for buying, selling and monitoring crypto assets across multiple blockchain networks through a Telegram interface, with wallet management, subscription billing and referrals.',
-    logo: blockchainTokenSniperLogo,
-    link: null,
-    linkLabel: null,
+      'A fast, easy-to-run website for a residents group, with news, events and community information in one place, plus a contact route for residents and a content system the committee can update themselves.',
+    logo: berthaParkLogo,
+    link: 'https://berthapark.org.uk',
+    linkLabel: 'Visit berthapark.org.uk',
   },
   {
     badge: 'Website and booking system',
