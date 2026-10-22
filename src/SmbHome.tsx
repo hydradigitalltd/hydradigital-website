@@ -2,6 +2,7 @@ import { useState } from 'react'
 import type { FormEvent } from 'react'
 import { faqs, minutesNote, featureGroups, plans, solutions, steps } from './data/packages'
 import type { Cell, PlanId } from './data/packages'
+import { clients } from './data/clients'
 import './smb.css'
 
 const formDefaults = { name: '', email: '', phone: '', company: '', website: '', details: '' }
@@ -23,14 +24,13 @@ function Tick({ value }: { value: Cell }) {
 
 function SmbHome() {
   const [yearly, setYearly] = useState(false)
-  const [incVat, setIncVat] = useState(false)
   const [formData, setFormData] = useState(formDefaults)
   const [formState, setFormState] = useState<'idle' | 'loading' | 'success' | 'error'>('idle')
   const [formMessage, setFormMessage] = useState('')
 
-  const shown = (price: number) => {
-    const base = yearly ? (price * 10) / 12 : price
-    return Math.round(incVat ? base * 1.2 : base)
+  const shown = (price: number | null) => {
+    if (price === null) return 'Custom'
+    return `£${Math.round(yearly ? (price * 10) / 12 : price)}`
   }
 
   const choosePlan = (id: PlanId) => {
@@ -131,10 +131,6 @@ function SmbHome() {
               <button type="button" aria-pressed={yearly} onClick={() => setYearly(true)}>Yearly</button>
               <span className="smb-switch-note">2 months free on yearly</span>
             </div>
-            <div className="smb-switch" role="group" aria-label="Price basis">
-              <button type="button" aria-pressed={!incVat} onClick={() => setIncVat(false)}>Ex VAT</button>
-              <button type="button" aria-pressed={incVat} onClick={() => setIncVat(true)}>Inc VAT</button>
-            </div>
           </div>
 
           <div className="smb-plans">
@@ -144,8 +140,8 @@ function SmbHome() {
                 <h3>{plan.name}</h3>
                 <p className="smb-plan-tag">{plan.tagline}</p>
                 <p className="smb-price">
-                  <strong>£{shown(plan.price)}</strong>
-                  <span> per month {incVat ? 'inc' : 'ex'} VAT{yearly ? ', billed yearly' : ''}</span>
+                  <strong>{shown(plan.price)}</strong>
+                  <span>{plan.price === null ? 'priced to fit your business' : `per month${yearly ? ', billed yearly' : ''}`}</span>
                 </p>
                 <p className="smb-terms">No setup fee. 6 month minimum term.</p>
                 <p className="smb-includes">{index === 0 ? 'Includes:' : `Everything in ${plans[index - 1].name}, plus:`}</p>
@@ -182,7 +178,7 @@ function SmbHome() {
                   {plans.map((plan) => (
                     <th scope="col" key={plan.id} className={plan.popular ? 'is-popular' : undefined}>
                       <span className="smb-th-name">{plan.name}</span>
-                      <span className="smb-th-price">£{shown(plan.price)}/mo</span>
+                      <span className="smb-th-price">{plan.price === null ? 'Custom' : `${shown(plan.price)}/mo`}</span>
                     </th>
                   ))}
                 </tr>
@@ -226,7 +222,7 @@ function SmbHome() {
         <div className="container">
           <div className="section-heading">
             <span className="eyebrow">How it works</span>
-            <h2>Live in about two weeks</h2>
+            <h2>Live in days, not weeks</h2>
           </div>
           <ol className="smb-steps">
             {steps.map((step, index) => (
@@ -237,6 +233,33 @@ function SmbHome() {
               </li>
             ))}
           </ol>
+        </div>
+      </section>
+
+      <section className="content-section" id="work">
+        <div className="container">
+          <div className="section-heading">
+            <span className="eyebrow">Our clients</span>
+            <h2>A snapshot of what we've built</h2>
+          </div>
+          <div className="portfolio-grid">
+            {clients.map((item) => (
+              <article className="surface-card portfolio-card" key={item.title}>
+                <div className="portfolio-logo" aria-hidden="true">
+                  <img src={item.logo} alt="" width="256" height="256" loading="lazy" decoding="async" />
+                </div>
+                <span className="portfolio-badge">{item.badge}</span>
+                <h3>{item.title}</h3>
+                <p className="portfolio-subtitle">{item.subtitle}</p>
+                <p>{item.description}</p>
+                {item.link ? (
+                  <a className="text-link" href={item.link} target="_blank" rel="noreferrer">
+                    {item.linkLabel}
+                  </a>
+                ) : null}
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 

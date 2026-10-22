@@ -1,5 +1,5 @@
 // Placeholder package pricing and feature matrix for the SMB redesign.
-// Prices are ex VAT per month and are made up until the real numbers are set.
+// Prices are per month. Hydra is not VAT registered yet, so none are quoted with VAT.
 
 export type PlanId = 'starter' | 'growth' | 'pro'
 
@@ -7,7 +7,7 @@ export type Plan = {
   id: PlanId
   name: string
   tagline: string
-  price: number
+  price: number | null // null means "Custom", quoted per client
   popular?: boolean
   highlights: string[]
 }
@@ -17,7 +17,7 @@ export const plans: Plan[] = [
     id: 'starter',
     name: 'Starter',
     tagline: 'A proper website, hosted and looked after.',
-    price: 49,
+    price: 30,
     highlights: [
       'Custom-designed website',
       'Hosting, SSL and security included',
@@ -30,7 +30,7 @@ export const plans: Plan[] = [
     id: 'growth',
     name: 'Growth',
     tagline: 'Get found, get enquiries, get bookings.',
-    price: 149,
+    price: 90,
     popular: true,
     highlights: [
       'Edit it yourself with the CMS',
@@ -44,10 +44,10 @@ export const plans: Plan[] = [
     id: 'pro',
     name: 'Pro',
     tagline: 'Marketing and admin running on autopilot.',
-    price: 349,
+    price: null,
     highlights: [
       'Full e-commerce option',
-      'Google Ads management (ad spend separate)',
+      'Google, Meta and ChatGPT Ads management (ad spend separate)',
       'Social media management, 12 posts a month',
       'AI phone assistant, 60 mins included*',
       'Custom integrations with the tools you already use',
@@ -99,6 +99,8 @@ export const featureGroups: FeatureGroup[] = [
       { label: 'Google Business Profile setup', values: [true, true, true] },
       { label: 'Google Business Profile management', values: [false, true, true] },
       { label: 'Google Ads management', values: [false, false, true] },
+      { label: 'Meta Ads management (Facebook and Instagram)', values: [false, false, true] },
+      { label: 'ChatGPT Ads management', values: [false, false, true] },
       { label: 'Social media management', values: [false, false, '12 posts a month'] },
       { label: 'Review requests', values: [false, true, true] },
     ],
@@ -132,6 +134,8 @@ export const solutions: { title: string; body: string }[] = [
   { title: 'Custom integrations', body: 'Connect your site to accounting, stock, email and the tools you already use.' },
   { title: 'SEO', body: 'Show up when local customers search for what you do.' },
   { title: 'Google Ads', body: 'Managed campaigns that spend your budget on calls, not clicks.' },
+  { title: 'ChatGPT Ads', body: 'Get your business in front of people asking ChatGPT, with campaigns we set up and manage.' },
+  { title: 'Meta Ads', body: 'Facebook and Instagram campaigns that put your offer in front of local customers.' },
   { title: 'Google Business Profile', body: 'Keep your Maps listing accurate, active and collecting reviews.' },
   { title: 'Social media', body: 'Regular, on-brand posts so your pages never go quiet.' },
   { title: 'AI phone assistant', body: 'Every call answered, questions handled, bookings taken, 24/7.' },
@@ -139,7 +143,7 @@ export const solutions: { title: string; body: string }[] = [
 
 export const steps: { title: string; body: string }[] = [
   { title: 'Free chat', body: 'A 20 minute call about your business, your customers and what is not working.' },
-  { title: 'We build it', body: 'You send us the basics. We design, build and set everything up, usually inside two weeks.' },
+  { title: 'We build it', body: 'You send us the basics. We design, build and set everything up, usually within a few days.' },
   { title: 'We run it', body: 'One monthly price. We host, update, report and keep improving it.' },
 ]
 
@@ -149,7 +153,7 @@ export const faqs: { q: string; a: string }[] = [
   { q: 'Can I move between packages?', a: 'Yes. Upgrade at any time and the change starts immediately. Downgrades take effect at the next billing date.' },
   { q: 'Do I need to write the content?', a: 'Not unless you want to. Send us what you have and we will shape it. Full copywriting is available as an add-on.' },
   { q: 'What does the AI phone assistant do?', a: 'It answers calls to your business number, answers common questions, takes messages and bookings, and sends you a summary. Calls it cannot handle are passed to you.' },
-  { q: 'Is Google Ads spend included?', a: 'No. The package covers managing your campaigns. You pay Google directly for clicks, so you always control the budget.' },
+  { q: 'Is ad spend included?', a: 'No. The package covers managing your Google, Meta (Facebook and Instagram) and ChatGPT campaigns. You pay each platform directly for clicks and impressions, so you always control the budget.' },
   { q: 'Can you build something custom?', a: 'Yes. If you need bespoke software or a mobile app, we quote it separately. See our bespoke software service.' },
   { q: 'What if I already have a website?', a: 'We can rebuild it, or keep it and add the bookings, CRM, SEO and marketing around it.' },
 ]
